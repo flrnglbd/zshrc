@@ -99,17 +99,6 @@ export EDITOR='vim'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Config
-# alias zshreload="source ~/.zshrc && echo '**zshrc reload**'"
-alias zshrc="vim ~/.zshrc"
-
-alias vimrc="vim ~/.vimrc"
-alias i3config="vim ~/.config/i3/config"
-
-# Copy to clipboard from command line
-alias copy="xclip -selection clipboard"
-alias wifi="nm-connection-editor"
-# alias copy="pbcopy"
 
 ###########
 # ALIAS ###
@@ -125,52 +114,51 @@ alias du="du -h"
 
 # alias grep="egrep -R"
 
+# Config
+# alias zshreload="source ~/.zshrc && echo '**zshrc reload**'"
+alias zshrc="vim ~/.zshrc"
+
+alias vimrc="vim ~/.vimrc"
+alias i3config="vim ~/.config/i3/config"
+
+# Copy to clipboard from command line
+alias copy="xclip -selection clipboard"
+alias wifi="nm-connection-editor"
+# alias copy="pbcopy"
+
 # VIM
+export VIM_HOME="$HOME/.vim"
 alias vimrc="vim ~/.vimrc"
 alias v="vim"
-export VIM_HOME="$HOME/.vim"
-
-alias gad="git add"
-alias gst="git status"
-
 
 # PYTHON
-# alias python="python -B"
-# alias sd="source deactivate"
-# alias sa="source activate"
-# alias cl="conda-env list"
+alias python="python -B"
+alias sd="source deactivate"
+alias sa="source activate"
+alias cl="conda-env list"
 
-# alias h="cat ~/.zshrc | grep alias"
 alias pg="ping google.com"
 
 # GIT
-alias st="git status"
-alias add="git add"
+alias gad="git add"
+alias gst="git status"
 alias dif="git diff"
 alias glog="git log"
-alias push="git push -u origin ${$(echo $(git_prompt_info) |  cut -d'%' -f 5):1}"
 
 # VAGRANT
-# alias vup="vagrant up"
-# alias vhalt="vagrant halt"
-# alias vssh="vagrant ssh"
+alias vup="vagrant up"
+alias vhalt="vagrant halt"
+alias vssh="vagrant ssh"
 
 # DEV
 # alias dev="cd $DEV"
 
 ctags=/usr/bin/ctags
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # ASDF manager of language environment
 . $HOME/.bin/asdf/asdf.sh
 . $HOME/.bin/asdf/completions/asdf.bash
 . $HOME/.asdf/plugins/java/set-java-home.sh
-
-
 
 # KUBERNETES
 alias kc="kubectl"
