@@ -166,11 +166,3 @@ alias kc="kubectl"
 # Set keyboard layout & swap caps and escape
 setxkbmap -option caps:swapescape
 setxkbmap -layout us -variant mac
-
-# TEST eIDAS
-export EIDAS_CONFIG_REPOSITORY="$HOME/lib/eIDAS/bin/TOMCAT/tomcat"
-export SPECIFIC_CONNECTOR_CONFIG_REPOSITORY="$HOME/lib/eIDAS/bin/TOMCAT/tomcat/specificConnector"
-export SPECIFIC_PROXY_SERVICE_CONFIG_REPOSITORY="$HOME/lib/eIDAS/bin/TOMCAT/tomcat/specificProxyService"
-export SP_CONFIG_REPOSITORY="$HOME/lib/eIDAS/bin/TOMCAT/tomcat/sp"
-export IDP_CONFIG_REPOSITORY="$HOME/lib/eIDAS/bin/TOMCAT/tomcat/idp"
-
