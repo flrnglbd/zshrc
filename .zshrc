@@ -72,8 +72,8 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 git
-vi-mode
-virtualenv
+# vi-mode
+# virtualenv
 tmux
 asdf
 mix
@@ -160,11 +160,6 @@ alias push="git push -u origin ${$(echo $(git_prompt_info) |  cut -d'%' -f 5):1}
 
 ctags=/usr/bin/ctags
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # ASDF manager of language environment
 . $HOME/.bin/asdf/asdf.sh
 . $HOME/.bin/asdf/completions/asdf.bash
@@ -179,10 +174,21 @@ alias kc="kubectl"
 setxkbmap -option caps:swapescape
 setxkbmap -layout us -variant mac
 
-# TEST eIDAS
-export EIDAS_CONFIG_REPOSITORY="$HOME/lib/eIDAS/bin/TOMCAT/tomcat"
-export SPECIFIC_CONNECTOR_CONFIG_REPOSITORY="$HOME/lib/eIDAS/bin/TOMCAT/tomcat/specificConnector"
-export SPECIFIC_PROXY_SERVICE_CONFIG_REPOSITORY="$HOME/lib/eIDAS/bin/TOMCAT/tomcat/specificProxyService"
-export SP_CONFIG_REPOSITORY="$HOME/lib/eIDAS/bin/TOMCAT/tomcat/sp"
-export IDP_CONFIG_REPOSITORY="$HOME/lib/eIDAS/bin/TOMCAT/tomcat/idp"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+source <(stern --completion=zsh)
+
+# Feed the output of fd into fzf
+# fd --type f | fzf
+
+# Setting fd as the default source for fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+
+# Now fzf (w/o pipe) will use fd instead of find
+# fzf
+
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
